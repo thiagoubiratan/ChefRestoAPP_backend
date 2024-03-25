@@ -41,7 +41,7 @@ model Product {
   createdAt   DateTime? @default(now())
   updatedAt   DateTime? @default(now())
   name        String
-  price       Float
+  price       String
   description String
   banner      String
 
@@ -60,8 +60,9 @@ model Order {
   table     Int
   status    Boolean   @default(false)
   draft     Boolean   @default(true)
-
-  items Item[]
+  name      String?
+  
+  items     Item[]
 
   @@map("orders")
 }
