@@ -9,7 +9,7 @@ class DetailOrderService {
 
         let orderId = Number.parseInt(order_id);
 
-        const orders = await prismaClient.item.findFirst({
+        const orders = await prismaClient.item.findMany({
             where: {
                 order_id: orderId
             },
